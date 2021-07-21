@@ -1,3 +1,5 @@
+const fs = require('fs');
+
 const ROOT_DIR = '..';
 const FILE_PATTERN = /\.github\/workflows\/.*\.yml/;
 const IGNORE_PATTERNS = 'node_modules';
@@ -10,8 +12,6 @@ const REPLACE_TEMPLATE = `run: |
                       echo "Missing DEVHUB_SFDX_URL secret. Is this workflow running on a fork?";
                       exit 1;
                   fi`;
-
-const fs = require('fs');
 
 const scanDir = (dirPath) => {
   const files = fs.readdirSync(dirPath);

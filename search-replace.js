@@ -3,8 +3,6 @@ const FILE_PATTERN = /\.github\/workflows\/.*\.yml/;
 const IGNORE_PATTERNS = 'node_modules';
 const SEARCH_PATTERN = /run: echo \${{ secrets\.DEVHUB_SFDX_URL}} > \.\/DEVHUB_SFDX_URL\.txt/m;
 
-const COMPONENT_TAG = '%COMPONENT_TAG%';
-const COMPONENT_CLASS = '%COMPONENT_CLASS%';
 const REPLACE_TEMPLATE = `run: |
                   echo $\{{ secrets.DEVHUB_SFDX_URL}} > ./DEVHUB_SFDX_URL.txt
                   secretFileSize=$(wc -c "./DEVHUB_SFDX_URL.txt" | awk '{print $1}')
